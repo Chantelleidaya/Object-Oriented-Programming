@@ -1,0 +1,23 @@
+# Create the class (blueprint)
+class Dog:
+    name = ""          # attribute (data)
+    age = 0
+    
+    def bark(self):    # method (action)
+        print(self.name + " says: Woof woof!")
+
+# Make real objects
+dog1 = Dog()
+dog1.name = "Max"
+dog1.age = 3
+
+dog2 = Dog()
+dog2.name = "Bella"
+dog2.age = 5
+
+# Use them
+print(dog1.name + " is " + str(dog1.age) + " years old")
+dog1.bark()
+
+print(dog2.name + " is " + str(dog2.age) + " years old")
+dog2.bark()
