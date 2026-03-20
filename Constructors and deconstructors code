@@ -1,0 +1,49 @@
+class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+        print(f"Student {self.name} created!")
+
+    def show_info(self):
+        print(f"{self.name} is in grade {self.grade}")
+
+    def __del__(self):
+        print(f"Student {self.name} removed")
+
+
+# Using it
+s1 = Student("Aisha", 10)     # constructor runs
+s1.show_info()
+
+s2 = Student("Jamal", 8)
+
+del s1                        # destructor may run here
+
+# s2 will be destroyed when program ends
+Typical output:
+textStudent Aisha created!
+Aisha is in grade 10
+Student Jamal created!
+Student Aisha removed
+Student Jamal removed   ← at end
+Example 2 – Phone (with a small cleanup message)
+Pythonclass Phone:
+    def __init__(self, brand, battery):
+        self.brand = brand
+        self.battery = battery
+        print(f"New {self.brand} phone created with {self.battery}% battery")
+
+    def charge(self):
+        self.battery = 100
+        print(f"{self.brand} phone charged to 100%")
+
+    def __del__(self):
+        print(f"{self.brand} phone is now destroyed")
+
+
+p1 = Phone("Samsung", 45)
+p1.charge()
+
+p2 = Phone("iPhone", 80)
+
+del p1
